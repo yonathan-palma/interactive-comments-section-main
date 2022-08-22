@@ -16,10 +16,23 @@
 <body>
     <main class="container">
         <section class="comments_container d-flex justify-content-center align-items-center">
-            <div class="comment col-8">
-                <p>
+            <div class="comment d-flex col-8">
+                <div class="col-1">
+                    <div class="d-flex flex-column text-center score">
+                        <button class="btn btnScore"><img src="images/icon-plus.svg" alt="+"></button>
+                        <span>5</span>
+                        <button class="btn btnScore"><img src="images/icon-minus.svg" alt="-"></button>
+                    </div>
+                </div>
+                <div class="col-11">
+                    <header class="d-flex">
+                        <img src="images/avatars/image-amyrobson.png" alt="User">
+                        <h2>Yonathan</h2>
+                        <time>hace rato mano</time>
+                        <button class="btn btnReply">Reply</button>
+                    </header>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse minima, debitis voluptates architecto quibusdam, itaque omnis officia fugit odio eaque qui voluptas cupiditate at deserunt distinctio porro, enim adipisci doloremque.
-                </p>
+                </div>
             </div>
             
         </section>
@@ -29,3 +42,4 @@
     <script type="module" src="js/index.js"></script> 
 </body>
 </html>
+
