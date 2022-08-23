@@ -22,7 +22,12 @@ const mostarData = async (data)=>{
                 </div>
             </div>
             <div class="col-11">
-                <header></header>
+                <header class="d-flex gap-3">
+                    <img src="${comentarios.comments[key].user.image.png}" class="img_user" alt="User">
+                    <h2>${comentarios.comments[key].user.username}</h2>
+                    <time class="text">${comentarios.comments[key].createdAt}</time>
+                    <button class="btnReply">Reply</button>
+                </header>
                 <p>${comentarios.comments[key].content}</p>
             </div>
         `;

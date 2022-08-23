@@ -18,6 +18,14 @@ body{
     background-color: var(--Verylightgray);
     margin: auto;
 }
+h2{
+    font-size: 1rem;
+    color: var(--Darkblue);
+    margin: 0;
+}
+.text{
+    color: var(--GrayishBlue);
+}
 .comments_container{
     /* height: 100vh; */
     overflow-y: scroll;
@@ -45,6 +53,10 @@ body{
 .score .btnScore:hover{
     filter: brightness(0) saturate(100%) invert(35%) sepia(20%) saturate(1878%) hue-rotate(200deg) brightness(95%) contrast(92%);
 }
+
+.img_user{
+    width: 40px;
+}
 .btnReply{
     background-image: url(../images/icon-reply.svg);
     background-repeat: no-repeat;
@@ -52,4 +64,10 @@ body{
     color: var(--Moderateblue);
     font-weight: 500;
     padding: 0 1.2rem;
+    margin-left: auto;
+    border: none;
+    background-color: transparent;
+}
+.btnReply:hover{
+    opacity: .5;
 }
