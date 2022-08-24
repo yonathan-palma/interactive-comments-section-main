@@ -15,28 +15,13 @@
 </head>
 <body>
     <main class="container">
-        <section class="comments_container d-flex justify-content-center align-items-center">
-            <div class="comment d-flex col-8">
-                <div class="col-1">
-                    <div class="d-flex flex-column text-center score">
-                        <button class="btn btnScore"><img src="images/icon-plus.svg" alt="+"></button>
-                        <span>5</span>
-                        <button class="btn btnScore"><img src="images/icon-minus.svg" alt="-"></button>
-                    </div>
-                </div>
-                <div class="col-11">
-                    <header class="d-flex gap-3">
-                        <img src="images/avatars/image-amyrobson.png" class="img_user" alt="User">
-                        <h2>Yonathan</h2>
-                        <time class="text">hace rato mano</time>
-                        <button class="btnReply">Reply</button>
-                    </header>
-                    <p class="text mt-3">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse minima, debitis voluptates architecto quibusdam, itaque omnis officia fugit odio eaque qui voluptas cupiditate at deserunt distinctio porro, enim adipisci doloremque.
-                    </p>
-                </div>
-            </div>
-            
+        <section class="comments_container row col-8 mx-auto justify-content-center align-items-center"></section>
+        <section class="form_section mt-3">
+            <form action="" class="form d-flex col-8 mx-auto gap-3 p-3 align-items-start">
+                <img src="images/avatars/image-juliusomo.png" class="img_user" alt="User">
+                <textarea name="" id="" cols="30" rows="4" class="form-control" placeholder="Add a comment"></textarea>
+                <button type="submit" class="btn send">SEND</button>
+            </form>
         </section>
 
     </main>
