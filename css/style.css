@@ -93,3 +93,39 @@ h2{
 .form .send:hover{
     opacity: .5;
 }
+
+.toggle_user{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--White);
+    border-radius: 12px 0 0 12px;
+    border: none;
+    padding: 0.5rem 1rem;
+}
+.offcanvasul{
+    list-style: none;
+    /* margin-right: 2rem; */
+    padding: 0;
+}
+.offcanvasul .offcanvasli button{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border: none;
+    background-color: transparent;  
+}
+.offcanvasul .offcanvasli:hover{
+    background-color: var(--SoftRed);
+}
+.current::after{
+    content: "you";
+    padding: 2px 7px;
+    margin-left: -8px;
+    border-radius: 2px;
+    background-color: var(--Moderateblue);
+    color: var(--White);
+    font-size: 12px;
+    font-weight: 500;
+}
