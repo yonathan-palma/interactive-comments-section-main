@@ -3,7 +3,6 @@ import mostarData from "./comments.js";
 function newComment(e){
 
     e.preventDefault();
-
     const textComment = document.getElementById("textComment");
     let comentarios = JSON.parse(localStorage.commeentAdd).comments;
     let user = JSON.parse(localStorage.commeentAdd).currentUser;
@@ -29,7 +28,9 @@ function newComment(e){
         comments: [...comentarios]
     }
 
+    localStorage.commeentAdd = JSON.stringify(newData);
     mostarData(JSON.stringify(newData));
+    // scrollTop 
     textComment.value = "";  
 }
 

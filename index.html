@@ -17,9 +17,9 @@
     <main class="container">
         <section class="comments_container row col-8 mx-auto justify-content-center align-items-center"></section>
         <section class="form_section mt-3">
-            <form action="" class="form d-flex col-8 mx-auto gap-3 p-3 align-items-start" id="comment">
-                <img src="images/avatars/image-juliusomo.png" class="img_user" alt="User">
-                <textarea name="" id="textComment" cols="30" rows="4" class="form-control" placeholder="Add a comment"></textarea>
+            <form action="" class="form d-flex col-8 mx-auto gap-3 p-3 align-items-start needs-validation" id="comment">
+                <img id="current_user" class="img_user" alt="User">
+                <textarea name="" id="textComment" cols="30" rows="4" class="form-control" placeholder="Add a comment" required></textarea>
                 <button type="submit" id="comment" class="btn send">SEND</button>
             </form>
         </section>
@@ -39,16 +39,16 @@
             <div class="offcanvas-body" style="padding:0;">
                 <ul class="offcanvasul">
                     <li class="offcanvasli px-4">
-                        <button data-current-user="amyrobson"> <img src="./images/avatars/image-amyrobson.png" alt="User"><h2>amyrobson</h2></button>
+                        <button type="button" class="change_user" data-bs-dismiss="offcanvas" data-current-user="amyrobson"> <img src="./images/avatars/image-amyrobson.png" alt="User"><h2>amyrobson</h2></button>
                     </li>
                     <li class="offcanvasli px-4">
-                        <button data-current-user="juliusomo"> <img src="./images/avatars/image-juliusomo.png" alt="User"><h2>juliusomo</h2></button>
+                        <button type="button" class="change_user" data-bs-dismiss="offcanvas" data-current-user="juliusomo"> <img src="./images/avatars/image-juliusomo.png" alt="User"><h2>juliusomo</h2></button>
                     </li>
                     <li class="offcanvasli px-4">
-                        <button data-current-user="maxblagun"> <img src="./images/avatars/image-maxblagun.png" alt="User"><h2>maxblagun</h2></button> 
+                        <button type="button" class="change_user" data-bs-dismiss="offcanvas" data-current-user="maxblagun"> <img src="./images/avatars/image-maxblagun.png" alt="User"><h2>maxblagun</h2></button> 
                     </li>
                     <li class="offcanvasli px-4">
-                        <button data-current-user="ramsesmiron"> <img src="./images/avatars/image-ramsesmiron.png" alt="User"><h2>ramsesmiron</h2></button> 
+                        <button type="button" class="change_user" data-bs-dismiss="offcanvas" data-current-user="ramsesmiron"> <img src="./images/avatars/image-ramsesmiron.png" alt="User"><h2>ramsesmiron</h2></button> 
                     </li>
                 </ul>
             </div>

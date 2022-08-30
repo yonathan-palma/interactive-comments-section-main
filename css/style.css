@@ -67,18 +67,27 @@ h2{
 .img_user{
     width: 40px;
 }
-.btnReply{
-    background-image: url(../images/icon-reply.svg);
+.btnControls{
     background-repeat: no-repeat;
     background-position: left center;
-    color: var(--Moderateblue);
     font-weight: 500;
     padding: 0 1.2rem;
-    margin-left: auto;
     border: none;
     background-color: transparent;
 }
-.btnReply:hover{
+.reply{
+    background-image: url(../images/icon-reply.svg);
+    color: var(--Moderateblue);
+}
+.delete{
+    background-image: url(../images/icon-delete.svg);
+    color: var(--SoftRed);
+}
+.edit{
+    background-image: url(../images/icon-edit.svg);
+    color: var(--Moderateblue);
+}
+.btnControls:hover{
     opacity: .5;
 }
 .form{
@@ -128,4 +137,9 @@ h2{
     color: var(--White);
     font-size: 12px;
     font-weight: 500;
+}
+.controls{
+    display: flex;
+    gap: 1rem;
+    margin-left: auto;
 }

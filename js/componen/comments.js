@@ -5,12 +5,17 @@ const mostarData = async (data)=>{
     if (localStorage.commeentAdd == undefined) {
         localStorage.commeentAdd = data;
     }
-    
     //convertir texto en json
     let comentarios = JSON.parse(localStorage.commeentAdd);
     let fragmenetDiv = document.createDocumentFragment();
 
     for (const key in comentarios.comments) {
+        let btnControls;
+        if (comentarios.comments[key].user.username === comentarios.currentUser.username) {
+            btnControls = `<button class="btnControls delete">Delete</button><button class="btnControls edit">Edit</button>`;
+        }else{
+            btnControls = `<button class="btnControls reply">Reply</button>`;
+        }
         const div = document.createElement("div");
         div.classList.add("comment", "d-flex", "col-12");
         let comment = `
@@ -26,7 +31,8 @@ const mostarData = async (data)=>{
                     <img src="${comentarios.comments[key].user.image.png}" class="img_user" alt="User">
                     <h2>${comentarios.comments[key].user.username}</h2>
                     <time class="text">${comentarios.comments[key].createdAt}</time>
-                    <button class="btnReply">Reply</button>
+                    <div class="controls">${btnControls}</div>
+                    
                 </header>
                 <p class="text mt-3">${comentarios.comments[key].content}</p>
             </div>
@@ -54,7 +60,7 @@ const mostarData = async (data)=>{
                                 <img src="${replies[clave].user.image.png}" class="img_user" alt="User">
                                 <h2>${replies[clave].user.username}</h2>
                                 <time class="text">${replies[clave].createdAt}</time>
-                                <button class="btnReply">Reply</button>
+                                <div class="controls">${btnControls}</div>
                             </header>
                             <p class="text mt-3"><span class="replyingTo">@${replies[clave].replyingTo}</span> ${replies[clave].content}</p>
                         </div>
