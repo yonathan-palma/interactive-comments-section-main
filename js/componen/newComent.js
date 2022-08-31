@@ -4,8 +4,9 @@ function newComment(e){
 
     e.preventDefault();
     const textComment = document.getElementById("textComment");
-    let comentarios = JSON.parse(localStorage.commeentAdd).comments;
-    let user = JSON.parse(localStorage.commeentAdd).currentUser;
+    const container = document.querySelector(".comments_container");
+    let comentarios = JSON.parse(localStorage.getItem("comments"));
+    let user = JSON.parse(localStorage.getItem("currentUser"));
 
     let newComment = {
         id: comentarios.length + 1,
@@ -28,9 +29,10 @@ function newComment(e){
         comments: [...comentarios]
     }
 
-    localStorage.commeentAdd = JSON.stringify(newData);
-    mostarData(JSON.stringify(newData));
-    // scrollTop 
+    localStorage.setItem("currentUser", JSON.stringify(newData.currentUser));
+    localStorage.setItem("comments", JSON.stringify(newData.comments));
+    mostarData();
+    container.scrollTop = container.scrollHeight; 
     textComment.value = "";  
 }
 

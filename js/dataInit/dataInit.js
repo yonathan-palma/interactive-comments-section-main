@@ -1,11 +1,17 @@
 
 const getData = async(API)=>{
     try {
-        let dataComent = await fetch(API);
+        if (localStorage.getItem("comments") == undefined) {
+            let dataJson = await fetch(API);
+            dataJson = await dataJson.json();
+            let userJson = dataJson.currentUser;
+            let commentsJson = dataJson.comments;
+            
+            localStorage.setItem("currentUser", JSON.stringify(userJson));
+            localStorage.setItem("comments", JSON.stringify(commentsJson));
+            return {...currentUser, ...comments};
+        }
         
-        //se devuelve en text
-        let response = dataComent.text();
-        return response;
     } catch (error) {
         console.log('%c Error en la solicitud', 'color:red');
     }
