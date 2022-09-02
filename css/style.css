@@ -143,3 +143,23 @@ h2{
     gap: 1rem;
     margin-left: auto;
 }
+.modal-header, .modal-footer{
+    border: none;
+}
+.modal-title{
+    color: var(--Darkblue);
+}
+.modal-content{
+    width: 70% !important;
+    margin: auto;
+}
+.modal-body{
+    padding: 0 1rem;
+}
+.modal-footer button{
+    flex: 1;
+}
+.modal-footer .btn-primary{
+    background-color: var(--SoftRed);
+    border-color: var(--SoftRed);
+}
