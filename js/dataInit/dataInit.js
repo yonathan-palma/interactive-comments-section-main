@@ -10,8 +10,7 @@ const getData = async(API)=>{
             localStorage.setItem("currentUser", JSON.stringify(userJson));
             localStorage.setItem("comments", JSON.stringify(commentsJson));
             return {...currentUser, ...comments};
-        }
-        
+        }      
     } catch (error) {
         console.log('%c Error en la solicitud', 'color:red');
     }

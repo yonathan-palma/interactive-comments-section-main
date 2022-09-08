@@ -1,4 +1,5 @@
 import controls from "./controls.js";
+import { deleteComment } from "../dataInit/deleteComment.js";
 
 const sectionComment = document.querySelector(".comments_container");
 
@@ -69,6 +70,20 @@ const mostarData = ()=>{
     }
     sectionComment.innerHTML = "";
     sectionComment.appendChild(fragmenetDiv);
+
+    const btnDelete = document.querySelectorAll(".delete");
+    btnDelete.forEach(item => item.addEventListener("click", deleteComment));
 }
 
 export default mostarData;
+
+const  generateRandomString = (num) => {
+    const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result1= ' ';
+    const charactersLength = characters.length;
+    for ( let i = 0; i < num; i++ ) {
+        result1 += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+
+    return result1;
+}
