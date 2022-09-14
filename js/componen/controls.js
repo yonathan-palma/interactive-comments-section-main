@@ -3,7 +3,8 @@ const controls = (obj)=>{
     let currentUser = JSON.parse(localStorage.getItem("currentUser"));
     let btnControls;
     if (obj.user.username === currentUser.username) {
-        btnControls = `<button type="button" 
+        btnControls = `<button 
+                        type="button" 
                         class="btnControls delete" 
                         data-replies="${obj.hasOwnProperty("replyingTo") ? "yes" : "no"}" 
                         data-indice="${obj.id}" 
@@ -13,7 +14,13 @@ const controls = (obj)=>{
                     </button>
                     <button class="btnControls edit">Edit</button>`;
     }else{
-        btnControls = `<button type="button" class="btnControls reply">Reply</button>`;
+        btnControls = `<button 
+                        type="button" 
+                        class="btnControls reply"
+                        data-replies="${obj.hasOwnProperty("replyingTo") ? "yes" : "no"}" 
+                        data-indice="${obj.id}">
+                        Reply
+                    </button>`;
     }
     return btnControls;
 }

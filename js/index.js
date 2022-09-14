@@ -7,6 +7,7 @@ import { confirmDelete } from "./dataInit/deleteComment.js";
 const data = './js/data.json';
 getData(data);
 mostarData();
+
 //comentar
 const btnComment = document.getElementById("comment");
 btnComment.addEventListener("submit", newComment);
@@ -23,11 +24,7 @@ btnChangeUser.forEach(element => {
 const imgUser = document.getElementById("current_user");
 imgUser.src = user.image.png;
 
+//eliminar comentario btn modal
 const btnConfirDelete = document.getElementById("comfirDelete");
 btnConfirDelete.addEventListener("click", confirmDelete);
 
-
-const btnreply = document.querySelectorAll(".reply");
-btnreply.forEach(item => item.addEventListener("click", ()=>{
-    console.log("reply");
-}))

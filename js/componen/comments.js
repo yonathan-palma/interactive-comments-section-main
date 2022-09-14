@@ -1,5 +1,6 @@
 import controls from "./controls.js";
 import { deleteComment } from "../dataInit/deleteComment.js";
+import replyComment from "./replyComment.js";
 
 const sectionComment = document.querySelector(".comments_container");
 
@@ -73,6 +74,11 @@ const mostarData = ()=>{
 
     const btnDelete = document.querySelectorAll(".delete");
     btnDelete.forEach(item => item.addEventListener("click", deleteComment));
+
+    const btnReply = document.querySelectorAll(".reply");
+    btnReply.forEach(btn => btn.addEventListener("click", replyComment));
+
+    
 }
 
 export default mostarData;

@@ -24,13 +24,8 @@ function newComment(e){
     };
     
     comentarios.push(newComment);
-    let newData = {
-        currentUser: {...user},
-        comments: [...comentarios]
-    }
 
-    localStorage.setItem("currentUser", JSON.stringify(newData.currentUser));
-    localStorage.setItem("comments", JSON.stringify(newData.comments));
+    localStorage.setItem("comments", JSON.stringify(comentarios));
     mostarData();
     container.scrollTop = container.scrollHeight; 
     textComment.value = "";  
