@@ -83,6 +83,9 @@ h2{
     background-image: url(../images/icon-delete.svg);
     color: var(--SoftRed);
 }
+.cancel{
+    color: var(--SoftRed);
+}
 .edit{
     background-image: url(../images/icon-edit.svg);
     color: var(--Moderateblue);
@@ -162,4 +165,8 @@ h2{
 .modal-footer .btn-primary{
     background-color: var(--SoftRed);
     border-color: var(--SoftRed);
+}
+.own{
+    /* cursor: no-drop; */
+    pointer-events: none;
 }

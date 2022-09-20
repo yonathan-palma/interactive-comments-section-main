@@ -11,8 +11,9 @@ function newComment(e){
     let newComment = {
         id: comentarios.length + 1,
         content: textComment.value,
-        createdAt: "1 month ago",
+        createdAt: Date.now(),
         score: 0,
+        scoreUser:[],
         user: {
           image: { 
             png: `../images/avatars/image-${user.username}.png`, 

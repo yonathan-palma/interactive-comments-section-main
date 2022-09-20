@@ -1,7 +1,6 @@
 import mostarData from './comments.js';
 
 let comentarios = JSON.parse(localStorage.getItem("comments"));
-let user = JSON.parse(localStorage.getItem("currentUser"));
     
 const addReplyComment = (e)=>{
 
@@ -10,11 +9,12 @@ const addReplyComment = (e)=>{
     let textComment = form.querySelector("textarea").value;
     let reply = form.querySelector("button").dataset.replies;
     let indice = form.querySelector("button").dataset.indice;
+    let user = JSON.parse(localStorage.getItem("currentUser"));
 
     let newReply = {
         id: `reply-${comentarios.length + 1}`,
         content: textComment,
-        createdAt: "1 month ago",
+        createdAt: Date.now(),
         score: 0,
         replyingTo: user.username,
         user: {
@@ -51,12 +51,13 @@ const replyComment = (e)=>{
         form.parentElement.remove();
         return;
     }
+    let user = JSON.parse(localStorage.getItem("currentUser"));
     let section = document.createElement("section");
     reply === "yes" ? clases.push(...["col-11", "ms-auto"]) : '';
     section.classList.add(...clases);
     section.innerHTML=`
         <form action="" class="form d-flex col-12 mx-auto gap-3 p-3 align-items-start needs-validation formReply" id="formReply-${indice}">
-            <img id="current_user" src="${user.image.png}" class="img_user" alt="User">
+            <img src="${user.image.png}" class="img_user" alt="User">
             <textarea name="" id="textComment" cols="30" rows="4" class="form-control" placeholder="Add a comment" required></textarea>
             <button type="submit" data-replies="${reply}" data-indice="${indice}" class="btn send">REPLY</button>
         </form>

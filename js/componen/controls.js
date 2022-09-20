@@ -12,7 +12,12 @@ const controls = (obj)=>{
                         data-bs-target="#delete">
                         Delete
                     </button>
-                    <button class="btnControls edit">Edit</button>`;
+                    <button 
+                        class="btnControls edit"
+                        data-replies="${obj.hasOwnProperty("replyingTo") ? "yes" : "no"}" 
+                        data-indice="${obj.id}">
+                        Edit
+                    </button>`;
     }else{
         btnControls = `<button 
                         type="button" 

@@ -6,6 +6,11 @@ const getData = async(API)=>{
             dataJson = await dataJson.json();
             let userJson = dataJson.currentUser;
             let commentsJson = dataJson.comments;
+
+            commentsJson.forEach(comment => {
+                comment.scoreUser = [];
+                comment.replies.forEach(reply => reply.scoreUser = []);
+            });
             
             localStorage.setItem("currentUser", JSON.stringify(userJson));
             localStorage.setItem("comments", JSON.stringify(commentsJson));
