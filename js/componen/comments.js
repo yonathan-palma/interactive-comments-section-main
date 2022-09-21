@@ -11,6 +11,7 @@ const mostarData = ()=>{
 
     //convertir texto en json
     let comentarios = JSON.parse(localStorage.getItem("comments"));
+    comentarios = comentarios.sort((a,b)=> a.score < b.score ? 1 : -1);
     let fragmenetDiv = document.createDocumentFragment();
     let btnControls;
 
