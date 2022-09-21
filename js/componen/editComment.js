@@ -31,7 +31,7 @@ const editComment = (e)=>{
     form.classList.add("form", "d-flex", "col-12", "flex-column", "gap-3", "p-3", "align-items-end", "needs-validation", "formUpdate");
     form.id = "updateComment"
     form.innerHTML = `
-        <textarea name="" id="textComment" cols="30" rows="4" class="form-control" required>${update.content}</textarea>
+        <textarea id="textComment" cols="30" rows="4" class="form-control" required>${update.content}</textarea>
         <button type="submit" data-replies="${reply}"  data-indice="${indice}" class="btn send">UPDATE</button>`;
 
     container.appendChild(form);
