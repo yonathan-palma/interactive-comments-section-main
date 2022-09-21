@@ -16,8 +16,8 @@ function newComment(e){
         scoreUser:[],
         user: {
           image: { 
-            png: `../images/avatars/image-${user.username}.png`, 
-            webp: `../images/avatars/image-${user.username}.webp`
+            png: `images/avatars/image-${user.username}.png`, 
+            webp: `images/avatars/image-${user.username}.webp`
         },
           username: user.username
         },
