@@ -1,3 +1,4 @@
+import mostarData from "../componen/comments.js";
 
 const getData = async(API)=>{
     try {
@@ -14,8 +15,8 @@ const getData = async(API)=>{
             
             localStorage.setItem("currentUser", JSON.stringify(userJson));
             localStorage.setItem("comments", JSON.stringify(commentsJson));
-            return {...currentUser, ...comments};
         }      
+        mostarData();
     } catch (error) {
         console.log('%c Error en la solicitud', 'color:red');
     }

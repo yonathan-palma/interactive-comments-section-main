@@ -1,16 +1,16 @@
-let comentarios = JSON.parse(localStorage.getItem("comments"));
-let user = JSON.parse(localStorage.getItem("currentUser"));
+
 
 function scoreAdd(){
     let indice = this.dataset.indice;
     let reply = this.dataset.replies;
     let spanScore = this.parentElement.querySelector("span");
+    let comentarios = JSON.parse(localStorage.getItem("comments"));
+    let user = JSON.parse(localStorage.getItem("currentUser"));
 
     if (reply === "no") {
         let index = comentarios.findIndex(element => element.id == indice);
         let scoreUser = comentarios[index].scoreUser.indexOf(user.username);
         if (scoreUser >= 0) {
-            console.log("ya te gusta mamon");
             return;
         }
         comentarios[index].score = comentarios[index].score + 1;
@@ -25,7 +25,6 @@ function scoreAdd(){
         let indexReplies = comentarios[index].replies.findIndex(element => element.id == indice);
         let scoreUser = comentarios[index].replies[indexReplies].scoreUser.indexOf(user.username);
         if (scoreUser >= 0) {
-            console.log("ya te gusta mamon");
             return;
         }
         comentarios[index].replies[indexReplies].score = comentarios[index].replies[indexReplies].score + 1;
@@ -42,12 +41,13 @@ function scoreRemove(){
     let indice = this.dataset.indice;
     let reply = this.dataset.replies;
     let spanScore = this.parentElement.querySelector("span");
+    let comentarios = JSON.parse(localStorage.getItem("comments"));
+    let user = JSON.parse(localStorage.getItem("currentUser"));
 
     if (reply === "no") {
         let index = comentarios.findIndex(element => element.id == indice);
         let scoreUser = comentarios[index].scoreUser.indexOf(user.username);
         if (scoreUser == -1) {
-            console.log("ya no te gusta mamon remove");
             return;
         }
         comentarios[index].score = comentarios[index].score - 1;
@@ -62,7 +62,6 @@ function scoreRemove(){
         let indexReplies = comentarios[index].replies.findIndex(element => element.id == indice);
         let scoreUser = comentarios[index].replies[indexReplies].scoreUser.indexOf(user.username);
         if (scoreUser == -1) {
-            console.log("ya no te gusta mamon");
             return;
         }
         comentarios[index].replies[indexReplies].score = comentarios[index].replies[indexReplies].score - 1;

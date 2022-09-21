@@ -16,7 +16,7 @@ const addReplyComment = (e)=>{
         content: textComment,
         createdAt: Date.now(),
         score: 0,
-        replyingTo: user.username,
+        replyingTo: '',
         user: {
           image: { 
             png: `../images/avatars/image-${user.username}.png`, 
@@ -28,11 +28,16 @@ const addReplyComment = (e)=>{
 
     if (reply === "no") {
         let index = comentarios.findIndex(element => element.id == indice);
+        let replyingTo = comentarios[index].user.username;
+        newReply.replyingTo = replyingTo;
         comentarios[index].replies.push(newReply);
     }else if(reply === "yes"){
         let index = comentarios.findIndex((element) => {
             return element.replies.find(reply => reply.id == indice);          
         });
+        let indexReplies = comentarios[index].replies.findIndex(element => element.id == indice);
+        let replyingTo = comentarios[index].replies[indexReplies].user.username;
+        newReply.replyingTo = replyingTo;
         comentarios[index].replies.push(newReply);
     }
 

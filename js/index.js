@@ -1,12 +1,10 @@
-import getData from "./dataInit/dataInit.js";
-import mostarData from "./componen/comments.js";
+import getData from "./utils/dataInit.js";
 import newComment from "./componen/newComent.js";
-import changeUser from "./dataInit/changeUser.js";
-import { confirmDelete } from "./dataInit/deleteComment.js";
+import changeUser from "./utils/changeUser.js";
+import { confirmDelete } from "./utils/deleteComment.js";
 
 const data = './js/data.json';
-getData(data);
-mostarData();
+let from = await getData(data);
 
 //comentar
 const btnComment = document.getElementById("comment");

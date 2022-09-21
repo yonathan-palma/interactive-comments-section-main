@@ -33,7 +33,7 @@ export default function fromNow(date) {
       return hours + ' hours ago';
     }
     if (minutes >= 45 && minutes <= 89) {
-      return 'an hour ago';
+      return '1 hour ago';
     }
     if (seconds >= 90 && minutes <= 44) {
       return minutes + ' minutes ago';

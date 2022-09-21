@@ -1,9 +1,9 @@
 import controls from "./controls.js";
-import { deleteComment } from "../dataInit/deleteComment.js";
+import { deleteComment } from "../utils/deleteComment.js";
 import replyComment from "./replyComment.js";
 import { editComment } from "./editComment.js";
-import fromNow from "../dataInit/fromNow.js";
-import { scoreAdd, scoreRemove} from "../dataInit/score.js";
+import fromNow from "../utils/fromNow.js";
+import { scoreAdd, scoreRemove} from "../utils/score.js";
 
 const sectionComment = document.querySelector(".comments_container");
 
@@ -48,7 +48,7 @@ const mostarData = ()=>{
         let replies = comentarios[key].replies;
         if (replies.length > 0) {
             const divReplies = document.createElement("div");
-            divReplies.classList.add("col-11", "d-flex", "flex-column", "gap-3", "border-start", "ms-auto");
+            divReplies.classList.add("col-12", "col-md-11", "d-flex", "flex-column", "gap-3", "border-start", "ms-auto");
 
             for (const clave in replies) { 
                 btnControls = controls(comentarios[key].replies[clave]); 
@@ -114,14 +114,3 @@ const mostarData = ()=>{
 }
 
 export default mostarData;
-
-const  generateRandomString = (num) => {
-    const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let result1= ' ';
-    const charactersLength = characters.length;
-    for ( let i = 0; i < num; i++ ) {
-        result1 += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-
-    return result1;
-}

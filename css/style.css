@@ -170,3 +170,36 @@ h2{
     /* cursor: no-drop; */
     pointer-events: none;
 }
+
+@media (max-width:425px) {
+    .border-start{
+        padding: 0
+    }
+    .comment{
+        position: relative;
+        flex-direction: column;
+    }
+    .comment .col-1{
+        order: 1;
+    }
+    .score{
+        flex-direction: row !important;
+        max-width: none;
+        width: fit-content;
+        gap: 0.5rem;
+        align-items: center;
+    }
+    .controls{
+        position: absolute;
+        bottom: 20px;
+        right: 0;
+    }
+    #comment{
+        display: grid !important;
+        grid-template-columns: 1fr auto;
+    }
+    #comment textarea{
+        order: -1;
+        grid-column: 1/3;
+    }
+}

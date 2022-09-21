@@ -1,12 +1,11 @@
 import controls from "./controls.js";
 import mostarData from "./comments.js"
 
-let comentarios = JSON.parse(localStorage.getItem("comments"));
-
 const editComment = (e)=>{
     let reply = e.target.dataset.replies;
     let indice = e.target.dataset.indice;
     let btnContainer = e.target.parentElement;
+    let comentarios = JSON.parse(localStorage.getItem("comments"));
     
     let update;
 
@@ -49,6 +48,7 @@ function cancelUpdate(e){
     let container = btnContainer.parentElement.parentElement;
     let btnComponent;
     let update;
+    let comentarios = JSON.parse(localStorage.getItem("comments"));
 
     if (reply === "no") {
         let index = comentarios.findIndex(element => element.id == indice);
@@ -77,6 +77,7 @@ function updateComment(e){
     let textComment = form.querySelector("textarea").value;
     let reply = form.querySelector("button").dataset.replies;
     let indice = form.querySelector("button").dataset.indice;
+    let comentarios = JSON.parse(localStorage.getItem("comments"));
     
     if (reply === "no") {
         let index = comentarios.findIndex(element => element.id == indice);
