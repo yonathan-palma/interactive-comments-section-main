@@ -61,9 +61,9 @@ const replyComment = (e)=>{
     reply === "yes" ? clases.push(...["col-11", "ms-auto"]) : '';
     section.classList.add(...clases);
     section.innerHTML=`
-        <form action="" class="form d-flex col-12 mx-auto gap-3 p-3 align-items-start needs-validation formReply" id="formReply-${indice}">
+        <form class="form d-flex col-12 mx-auto gap-3 p-3 align-items-start needs-validation formReply" id="formReply-${indice}">
             <img src="${user.image.png}" class="img_user" alt="User">
-            <textarea name="" id="textComment" cols="30" rows="4" class="form-control" placeholder="Add a comment" required></textarea>
+            <textarea id="textComment" cols="30" rows="4" class="form-control" placeholder="Add a comment" required></textarea>
             <button type="submit" data-replies="${reply}" data-indice="${indice}" class="btn send">REPLY</button>
         </form>
     `;

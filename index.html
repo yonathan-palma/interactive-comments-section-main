@@ -17,10 +17,10 @@
     <main class="container">
         <section class="comments_container row col-12 col-md-8 mx-auto justify-content-center align-items-center"></section>
         <section class="form_section mt-3">
-            <form action="" class="form d-flex col-12 col-md-8 mx-auto gap-3 p-3 align-items-start needs-validation" id="comment">
+            <form class="form d-flex col-12 col-md-8 mx-auto gap-3 p-3 align-items-start needs-validation" id="comment">
                 <img id="current_user" class="img_user" alt="User">
-                <textarea name="" id="textComment" cols="30" rows="4" class="form-control" placeholder="Add a comment" required></textarea>
-                <button type="submit" id="comment" class="btn send">SEND</button>
+                <textarea id="textComment" cols="30" rows="4" class="form-control" placeholder="Add a comment" required></textarea>
+                <button type="submit" id="btnComment" class="btn send">SEND</button>
             </form>
         </section>
         <button class="toggle_user" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
@@ -67,8 +67,8 @@
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <input type="hidden" name="" id="type">
-                    <input type="hidden" name="" id="indice">
+                    <input type="hidden" id="type">
+                    <input type="hidden" id="indice">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NO, CANCEL</button>
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="comfirDelete">YES, DELETE</button>
                 </div>
