@@ -70,7 +70,7 @@ const mostarData = ()=>{
                             <header class="d-flex gap-3 align-items-center">
                                 <img src="${replies[clave].user.image.png}" class="img_user" alt="User">
                                 <h2>${replies[clave].user.username}</h2>
-                                <p class="text">${fromNow(replies[clave].createdAt)}</p>
+                                <span class="text">${fromNow(replies[clave].createdAt)}</span>
                                 <div class="controls">${btnControls}</div>
                             </header>
                             <p class="text mt-3"><span class="replyingTo">@${replies[clave].replyingTo}</span> ${replies[clave].content}</p>
